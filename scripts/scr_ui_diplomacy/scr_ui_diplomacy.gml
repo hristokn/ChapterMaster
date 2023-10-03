@@ -548,9 +548,12 @@ function scr_ui_diplomacy() {
     
 	if (show_stuff=true){
 	    draw_set_font(fnt_40k_14);draw_set_alpha(1);
-	    draw_set_color(38144);draw_set_halign(fa_left);
-	    draw_text_ext(xx+336+16,yy+209,string_hash_to_newline(string(diplo_txt)),-1,536);
-	    xx=__view_get( e__VW.XView, 0 );yy=__view_get( e__VW.YView, 0 );draw_set_halign(fa_center);
+	    draw_set_color(38144);
+		draw_set_halign(fa_left);
+	    //draw_text_ext(xx+336+16,yy+209, string_hash_to_newline(string(diplo_txt)),-1,536);
+		draw_text_tooltip(xx+336+16, yy+209, 536, string(diplo_txt)); 
+	    xx=__view_get( e__VW.XView, 0 );yy=__view_get( e__VW.YView, 0 );
+		draw_set_halign(fa_center);
 	    draw_line(xx+429,yy+710,xx+800,yy+710);
     
 	    if (trading=0) and (diplo_option[1]="") and (diplo_option[2]="") and (diplo_option[3]="") and (diplo_option[4]=""){
